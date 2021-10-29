@@ -1,0 +1,1417 @@
+var cash = 0;
+var multiplier = 0;
+var hydrogen = 0;
+var helium = 0;
+var lithium = 0;
+var berylium = 0;
+var boron = 0;
+var carbon = 0;
+var nitrogen = 0;
+var oxygen = 0;
+var flourine = 0;
+var neon = 0;
+var eventEnergy = 0;
+var leaf = 0;
+var bark = 0;
+var acorn = 0;
+var branch = 0;
+var tree = 0;
+var sap = 0;
+var sapOwned = false;
+var cashMulti = 1;
+var multiMulti = 1;
+var hydrogenMulti = 1;
+var heliumMulti = 1;
+var lithiumMulti = 1;
+var beryliumMulti = 1;
+var boronMulti = 1;
+var carbonMulti = 1;
+var nitrogenMulti = 1;
+var oxygenMulti = 1;
+var flourineMulti = 1;
+var eventMulti = 1;
+var leafMulti = 1;
+var barkMulti = 1;
+var acornMulti = 1;
+var branchMulti = 1;
+var scene = 1.5;
+var myString = "";
+var gameSaved;
+var drawStuff = function(){
+    var cashE = cash.toExponential(1);
+    var multiplierE = multiplier.toExponential(1);
+    var hydrogenE = hydrogen.toExponential(1);
+    var heliumE = helium.toExponential(1);
+    var lithiumE = lithium.toExponential(1);
+    var beryliumE = berylium.toExponential(1);
+    var boronE = boron.toExponential(1);
+    var carbonE = carbon.toExponential(1);
+    var nitrogenE = nitrogen.toExponential(1);
+    var oxygenE = oxygen.toExponential(1);
+    var flourineE = flourine.toExponential(1);
+    var neonE = neon.toExponential(1);
+    fill(0, 0, 0);
+    textSize(20);
+    text("cash:",0,0,100,100);
+    text("multiplier:",0,20,100,100);
+    text("hydrogen:",0,40,100,100);
+    text("helium:",0,60,100,100);
+    text("lithium:",0,80,100,100);
+    text("berylium:",0,100,100,100);
+    text("boron:",0,120,100,100);
+    text("carbon:",0,140,100,100);
+    text("nitrogen:",0,160,100,100);
+    text("oxygen:",0,180,100,100);
+    text("flourine:",0,200,100,100);
+    text("neon:",0,220,100,100);
+    text(cashE,50,0,1000,1000);
+    text(multiplierE,90,20,1000,1000);
+    text(hydrogenE,90,40,1000,1000);
+    text(heliumE,70,60,1000,1000);
+    text(lithiumE,70,80,1000,1000);
+    text(beryliumE,85,100,1000,1000);
+    text(boronE,60,120,1000,1000);
+    text(carbonE,70,140,1000,1000);
+    text(nitrogenE,80,160,1000,1000);
+    text(oxygenE,75,180,1000,1000);
+    text(flourineE,75,200,1000,1000);
+    text(neonE,50,220,1000,1000);
+    fill(0, 255, 0);
+    rect(0,499,599,99);
+    fill(0,0,0);
+    textSize(50);
+    text("elements",200,530,1000,1000);
+};
+var drawScene1 = function(){
+    background(255, 255, 255);
+    fill(255, 0, 0);
+    rect(150,30,150,50);
+    rect(150,90,150,50);
+    rect(150,150,150,50);
+    rect(150,210,150,50);
+    rect(150,270,150,50);
+    rect(150,330,150,50);
+    rect(350,30,150,50);
+    rect(350,90,150,50);
+    rect(350,150,150,50);
+    rect(350,210,150,50);
+    rect(350,270,150,50);
+    rect(350,330,150,50);
+    fill(0, 0, 0);
+    textSize(20);
+    text("1e+0 multiplier",160,35,150,50);
+    text("3e+0 multiplier",160,95,150,50);
+    text("7e+0 multiplier",160,155,150,50);
+    text("2e+1 multiplier",160,215,150,50);
+    text("4.5e+1 multiplier",150,275,150,50);
+    text("1e+2 multiplier",160,335,150,50);
+    text("cost:1e+2 cash",160,60,150,50);
+    text("cost:5e+2 cash",160,120,150,50);
+    text("cost:1e+3 cash",160,180,150,50);
+    text("cost:2.5e+3 cash",150,240,250,50);
+    text("cost:1e+4 cash",160,300,150,50);
+    text("cost:2.5e+4 cash",150,360,250,50);
+    text("2.5e+2 multiplier",350,35,150,50);
+    text("4.5e+2 multiplier",350,95,150,50);
+    text("1e+3 multiplier",360,155,150,50);
+    text("2.5e+3 multiplier",350,215,150,50);
+    text("4.5e+3 multiplier",350,275,150,50);
+    text("1e+4 multiplier",355,335,150,50);
+    text("cost:1e+5 cash",355,60,250,50);
+    text("cost:5e+5 cash",355,120,250,50);
+    text("cost:1e+6 cash",355,180,250,50);
+    text("cost:2.5e+6 cash",350,240,250,50);
+    text("cost:1e+7 cash",355,300,250,50);
+    text("cost:2.5e+7 cash",350,360,250,50);
+};
+var drawScene2 = function(){
+    background(255, 255, 255);
+    fill(255, 255, 255);
+    rect(300,10,100,50);
+    rect(300,70,100,50);
+    rect(300,130,100,50);
+    rect(300,190,100,50);
+    rect(300,250,100,50);
+    rect(300,310,100,50);
+    rect(300,370,100,50);
+    rect(300,430,100,50);
+    rect(450,10,100,50);
+    rect(450,70,100,50);
+    rect(450,130,100,50);
+    rect(450,190,100,50);
+    rect(450,250,100,50);
+    rect(450,310,100,50);
+    rect(450,370,100,50);
+    rect(450,430,100,50);
+    rect(0,300,150,100);
+    rect(0,400,150,100);
+    fill(0, 0, 0);
+    textSize(30);
+    text("Mu",300,10,100,100);
+    text("H",300,70,100,100);
+    text("He",300,130,100,100);
+    text("Li",300,190,100,100);
+    text("Be",300,250,100,100);
+    text("B",300,310,100,100);
+    text("C",300,370,100,100);
+    text("N",300,430,100,100);
+    text("O",450,10,100,100);
+    text("F",450,70,100,100);
+    text("Ne",450,130,100,100);
+    text("autumn event",20,320,150,150);
+    text("rebuilding",10,430,200,100);
+};
+var drawScene3 = function(){
+    background(255, 255, 255);
+    fill(0, 0, 255);
+    rect(150,30,150,50);
+    rect(150,90,150,50);
+    rect(150,150,150,50);
+    rect(150,210,150,50);
+    rect(150,270,150,50);
+    rect(150,330,150,50);
+    rect(350,30,150,50);
+    rect(350,90,150,50);
+    rect(350,150,150,50);
+    rect(350,210,150,50);
+    rect(350,270,150,50);
+    rect(350,330,150,50);
+    fill(0, 0, 0);
+    textSize(20);
+    text("1e+0 hydrogen",160,35,250,50);
+    text("3e+0 hydrogen",160,95,250,50);
+    text("7e+0 hydrogen",160,155,250,50);
+    text("2e+1 hydrogen",160,215,250,50);
+    text("4.5e+1 hydrogen",150,275,250,50);
+    text("1e+2 hydrogen",160,335,250,50);
+    text("cost:1e+2 multiplier",160,60,250,50);
+    text("cost:5e+2 multiplier",160,120,250,50);
+    text("cost:1e+3 multiplier",160,180,250,50);
+    text("cost:2.5e+3 multiplier",150,240,250,50);
+    text("cost:1e+4 multiplier",160,300,250,50);
+    text("cost:2.5e+4 multiplier",150,360,250,50);
+    text("2.5e+2 hydrogen",350,35,250,50);
+    text("4.5e+2 hydrogen",350,95,250,50);
+    text("1e+3 hydrogen",360,155,250,50);
+    text("2.5e+3 hydrogen",350,215,250,50);
+    text("4.5e+3 hydrogen",350,275,250,50);
+    text("1e+4 hydrogen",355,335,250,50);
+    text("cost:1e+5 multiplier",355,60,250,50);
+    text("cost:5e+5 mulitplier",355,120,250,50);
+    text("cost:1e+6 multiplier",355,180,250,50);
+    text("cost:2.5e+6 multiplier",350,240,250,50);
+    text("cost:1e+7 multiplier",355,300,250,50);
+    text("cost:2.5e+7 multiplier",350,360,250,50);
+};
+var drawScene4 = function(){
+    background(255, 255, 255);
+    fill(0, 255, 0);
+    rect(150,30,150,50);
+    rect(150,90,150,50);
+    rect(150,150,150,50);
+    rect(150,210,150,50);
+    rect(150,270,150,50);
+    rect(150,330,150,50);
+    rect(350,30,150,50);
+    rect(350,90,150,50);
+    rect(350,150,150,50);
+    rect(350,210,150,50);
+    rect(350,270,150,50);
+    rect(350,330,150,50);
+    fill(0, 0, 0);
+    textSize(20);
+    text("1e+0 helium",160,35,250,50);
+    text("3e+0 helium",160,95,250,50);
+    text("7e+0 helium",160,155,250,50);
+    text("2e+1 helium",160,215,250,50);
+    text("4.5e+1 helium",150,275,250,50);
+    text("1e+2 helium",160,335,250,50);
+    text("cost:1e+2 hydrogen",160,60,250,50);
+    text("cost:5e+2 hydrogen",160,120,250,50);
+    text("cost:1e+3 hydrogen",160,180,250,50);
+    text("cost:2.5e+3 hydrogen",150,240,250,50);
+    text("cost:1e+4 hydrogen",160,300,250,50);
+    text("cost:2.5e+4 hydrogen",150,360,250,50);
+    text("2.5e+2 helium",350,35,250,50);
+    text("4.5e+2 helium",350,95,250,50);
+    text("1e+3 helium",360,155,250,50);
+    text("2.5e+3 helium",350,215,250,50);
+    text("4.5e+3 helium",350,275,250,50);
+    text("1e+4 helium",355,335,250,50);
+    text("cost:1e+5 hydrogen",355,60,250,50);
+    text("cost:5e+5 hydrogen",355,120,250,50);
+    text("cost:1e+6 hydrogen",355,180,250,50);
+    text("cost:2.5e+6 hydrogen",350,240,250,50);
+    text("cost:1e+7 hydrogen",355,300,250,50);
+    text("cost:2.5e+7 hydrogen",350,360,250,50);
+};
+var drawScene5 = function(){
+    background(255, 255, 255);
+    fill(255, 0, 255);
+    rect(150,30,150,50);
+    rect(150,90,150,50);
+    rect(150,150,150,50);
+    rect(150,210,150,50);
+    rect(150,270,150,50);
+    rect(150,330,150,50);
+    rect(350,30,150,50);
+    rect(350,90,150,50);
+    rect(350,150,150,50);
+    rect(350,210,150,50);
+    rect(350,270,150,50);
+    rect(350,330,150,50);
+    fill(0, 0, 0);
+    textSize(20);
+    text("1e+0 lithium",160,35,250,50);
+    text("3e+0 lithium",160,95,250,50);
+    text("7e+0 lithium",160,155,250,50);
+    text("2e+1 lithium",160,215,250,50);
+    text("4.5e+1 lithium",150,275,250,50);
+    text("1e+2 lithium",160,335,250,50);
+    text("cost:1e+2 helium",160,60,250,50);
+    text("cost:5e+2 helium",160,120,250,50);
+    text("cost:1e+3 helium",160,180,250,50);
+    text("cost:2.5e+3 helium",150,240,250,50);
+    text("cost:1e+4 helium",160,300,250,50);
+    text("cost:2.5e+4 helium",150,360,250,50);
+    text("2.5e+2 lithium",350,35,250,50);
+    text("4.5e+2 lithium",350,95,250,50);
+    text("1e+3 lithium",360,155,250,50);
+    text("2.5e+3 lithium",350,215,250,50);
+    text("4.5e+3 lithium",350,275,250,50);
+    text("1e+4 lithium",355,335,250,50);
+    text("cost:1e+5 helium",355,60,250,50);
+    text("cost:5e+5 helium",355,120,250,50);
+    text("cost:1e+6 helium",355,180,250,50);
+    text("cost:2.5e+6 helium",350,240,250,50);
+    text("cost:1e+7 helium",355,300,250,50);
+    text("cost:2.5e+7 helium",350,360,250,50);
+};
+var drawScene6 = function(){
+    background(255, 255, 255);
+    fill(255, 255, 0);
+    rect(150,30,150,50);
+    rect(150,90,150,50);
+    rect(150,150,150,50);
+    rect(150,210,150,50);
+    rect(150,270,150,50);
+    rect(150,330,150,50);
+    rect(350,30,150,50);
+    rect(350,90,150,50);
+    rect(350,150,150,50);
+    rect(350,210,150,50);
+    rect(350,270,150,50);
+    rect(350,330,150,50);
+    fill(0, 0, 0);
+    textSize(20);
+    text("1e+0 berylium",160,35,250,50);
+    text("3e+0 berylium",160,95,250,50);
+    text("7e+0 berylium",160,155,250,50);
+    text("2e+1 berylium",160,215,250,50);
+    text("4.5e+1 berylium",150,275,250,50);
+    text("1e+2 berylium",160,335,250,50);
+    text("cost:1e+2 lithium",160,60,250,50);
+    text("cost:5e+2 lithium",160,120,250,50);
+    text("cost:1e+3 lithium",160,180,250,50);
+    text("cost:2.5e+3 lithium",150,240,250,50);
+    text("cost:1e+4 lithium",160,300,250,50);
+    text("cost:2.5e+4 lithium",150,360,250,50);
+    text("2.5e+2 berylium",350,35,250,50);
+    text("4.5e+2 berylium",350,95,250,50);
+    text("1e+3 berylium",360,155,250,50);
+    text("2.5e+3 berylium",350,215,250,50);
+    text("4.5e+3 berylium",350,275,250,50);
+    text("1e+4 berylium",355,335,250,50);
+    text("cost:1e+5 lithium",355,60,250,50);
+    text("cost:5e+5 lithium",355,120,250,50);
+    text("cost:1e+6 lithium",355,180,250,50);
+    text("cost:2.5e+6 lithium",350,240,250,50);
+    text("cost:1e+7 lithium",355,300,250,50);
+    text("cost:2.5e+7 lithium",350,360,250,50);
+};
+var drawScene7 = function(){
+    background(255, 255, 255);
+    fill(0, 255, 255);
+    rect(150,30,150,50);
+    rect(150,90,150,50);
+    rect(150,150,150,50);
+    rect(150,210,150,50);
+    rect(150,270,150,50);
+    rect(150,330,150,50);
+    rect(350,30,150,50);
+    rect(350,90,150,50);
+    rect(350,150,150,50);
+    rect(350,210,150,50);
+    rect(350,270,150,50);
+    rect(350,330,150,50);
+    fill(0, 0, 0);
+    textSize(20);
+    text("1 boron",175,35,150,50);
+    text("3 boron",175,95,150,50);
+    text("7 boron",175,155,150,50);
+    text("20 boron",175,215,150,50);
+    text("45 boron",175,275,150,50);
+    text("100 boron",175,335,150,50);
+    text("cost:100 berylium",165,60,250,50);
+    text("cost:500 berylium",165,120,250,50);
+    text("cost:1000 berylium",160,180,250,50);
+    text("cost:2500 berylium",160,240,250,50);
+    text("cost:10000 berylium",155,300,250,50);
+    text("cost:25000 berylium",155,360,250,50);
+    text("250 boron",365,35,150,50);
+    text("450 boron",365,95,150,50);
+    text("1000 boron",360,155,150,50);
+    text("2500 boron",360,215,150,50);
+    text("4500 boron",360,275,150,50);
+    text("10000 boron",355,335,150,50);
+    text("cost:100000 berylium",355,60,250,50);
+    text("cost:500000 berylium",355,120,250,50);
+    text("cost:1000000 berylium",355,180,250,50);
+    text("cost:2500000 berylium",355,240,250,50);
+    text("cost:10000000 berylium",355,300,250,50);
+    text("cost:25000000 berylium",355,360,250,50);
+};
+var drawScene8 = function(){
+    background(255, 255, 255);
+    fill(183, 0, 255);
+    rect(150,30,150,50);
+    rect(150,90,150,50);
+    rect(150,150,150,50);
+    rect(150,210,150,50);
+    rect(150,270,150,50);
+    rect(150,330,150,50);
+    rect(350,30,150,50);
+    rect(350,90,150,50);
+    rect(350,150,150,50);
+    rect(350,210,150,50);
+    rect(350,270,150,50);
+    rect(350,330,150,50);
+    fill(0, 0, 0);
+    textSize(20);
+    text("1 carbon",175,35,150,50);
+    text("3 carbon",175,95,150,50);
+    text("7 carbon",175,155,150,50);
+    text("20 carbon",175,215,150,50);
+    text("45 carbon",175,275,150,50);
+    text("100 carbon",175,335,150,50);
+    text("cost:100 boron",165,60,250,50);
+    text("cost:500 boron",165,120,250,50);
+    text("cost:1000 boron",160,180,250,50);
+    text("cost:2500 boron",160,240,250,50);
+    text("cost:10000 boron",155,300,250,50);
+    text("cost:25000 boron",155,360,250,50);
+    text("250 carbon",365,35,150,50);
+    text("450 carbon",365,95,150,50);
+    text("1000 carbon",360,155,150,50);
+    text("2500 carbon",360,215,150,50);
+    text("4500 carbon",360,275,150,50);
+    text("10000 carbon",355,335,150,50);
+    text("cost:100000 boron",355,60,250,50);
+    text("cost:500000 boron",355,120,250,50);
+    text("cost:1000000 boron",355,180,250,50);
+    text("cost:2500000 boron",355,240,250,50);
+    text("cost:10000000 boron",355,300,250,50);
+    text("cost:25000000 boron",355,360,250,50);
+};
+var drawScene9 = function(){
+    background(255, 255, 255);
+    fill(28, 166, 10);
+    rect(150,30,150,50);
+    rect(150,90,150,50);
+    rect(150,150,150,50);
+    rect(150,210,150,50);
+    rect(150,270,150,50);
+    rect(150,330,150,50);
+    rect(350,30,150,50);
+    rect(350,90,150,50);
+    rect(350,150,150,50);
+    rect(350,210,150,50);
+    rect(350,270,150,50);
+    rect(350,330,150,50);
+    fill(0, 0, 0);
+    textSize(20);
+    text("1 nitrogen",175,35,150,50);
+    text("3 nitrogen",175,95,150,50);
+    text("7 nitrogen",175,155,150,50);
+    text("20 nitrogen",175,215,150,50);
+    text("45 nitrogen",175,275,150,50);
+    text("100 nitrogen",175,335,150,50);
+    text("cost:100 hydrogen",165,60,250,50);
+    text("cost:500 hydrogen",165,120,250,50);
+    text("cost:1000 hydrogen",160,180,250,50);
+    text("cost:2500 hydrogen",160,240,250,50);
+    text("cost:10000 hydrogen",155,300,250,50);
+    text("cost:25000 hydrogen",155,360,250,50);
+    text("250 nitrogen",365,35,150,50);
+    text("450 nitrogen",365,95,150,50);
+    text("1000 nitrogen",360,155,150,50);
+    text("2500 nitrogen",360,215,150,50);
+    text("4500 nitrogen",360,275,150,50);
+    text("10000 nitrogen",355,335,150,50);
+    text("cost:100000 hydrogen",355,60,250,50);
+    text("cost:500000 hydrogen",355,120,250,50);
+    text("cost:1000000 hydrogen",355,180,250,50);
+    text("cost:2500000 hydrogen",355,240,250,50);
+    text("cost:10000000 hydrogen",355,300,250,50);
+    text("cost:25000000 hydrogen",355,360,250,50);
+};
+var drawScene10 = function(){
+    background(255, 255, 255);
+    fill(255, 0, 166);
+    rect(150,30,150,50);
+    rect(150,90,150,50);
+    rect(150,150,150,50);
+    rect(150,210,150,50);
+    rect(150,270,150,50);
+    rect(150,330,150,50);
+    rect(350,30,150,50);
+    rect(350,90,150,50);
+    rect(350,150,150,50);
+    rect(350,210,150,50);
+    rect(350,270,150,50);
+    rect(350,330,150,50);
+    fill(0, 0, 0);
+    textSize(20);
+    text("1 oxygen",175,35,150,50);
+    text("3 oxygen",175,95,150,50);
+    text("7 oxygen",175,155,150,50);
+    text("20 oxygen",175,215,150,50);
+    text("45 oxygen",175,275,150,50);
+    text("100 oxygen",175,335,150,50);
+    text("cost:100 nitrogen",165,60,250,50);
+    text("cost:500 nitrogen",165,120,250,50);
+    text("cost:1000 nitrogen",160,180,250,50);
+    text("cost:2500 nitrogen",160,240,250,50);
+    text("cost:10000 nitrogen",155,300,250,50);
+    text("cost:25000 nitrogen",155,360,250,50);
+    text("250 oxygen",365,35,150,50);
+    text("450 oxygen",365,95,150,50);
+    text("1000 oxygen",360,155,150,50);
+    text("2500 oxygen",360,215,150,50);
+    text("4500 oxygen",360,275,150,50);
+    text("10000 oxygen",355,335,150,50);
+    text("cost:100000 nitrogen",355,60,250,50);
+    text("cost:500000 nitrogen",355,120,250,50);
+    text("cost:1000000 nitrogen",355,180,250,50);
+    text("cost:2500000 nitrogen",355,240,250,50);
+    text("cost:10000000 nitrogen",355,300,250,50);
+    text("cost:25000000 nitrogen",355,360,250,50);
+};
+var drawScene11 = function(){
+    background(255, 255, 255);
+    fill(175,0,0);
+    rect(150,30,150,50);
+    rect(150,90,150,50);
+    rect(150,150,150,50);
+    rect(150,210,150,50);
+    rect(150,270,150,50);
+    rect(150,330,150,50);
+    rect(350,30,150,50);
+    rect(350,90,150,50);
+    rect(350,150,150,50);
+    rect(350,210,150,50);
+    rect(350,270,150,50);
+    rect(350,330,150,50);
+    fill(0, 0, 0);
+    textSize(20);
+    text("1 flourine",175,35,150,50);
+    text("3 flourine",175,95,150,50);
+    text("7 flourine",175,155,150,50);
+    text("20 flourine",175,215,150,50);
+    text("45 flourine",175,275,150,50);
+    text("100 flourine",175,335,150,50);
+    text("cost:100 oxygen",165,60,250,50);
+    text("cost:500 oxygen",165,120,250,50);
+    text("cost:1000 oxygen",160,180,250,50);
+    text("cost:2500 oxygen",160,240,250,50);
+    text("cost:10000 oxygen",155,300,250,50);
+    text("cost:25000 oxygen",155,360,250,50);
+    text("250 flourine",365,35,150,50);
+    text("450 flourine",365,95,150,50);
+    text("1000 flourine",360,155,150,50);
+    text("2500 flourine",360,215,150,50);
+    text("4500 flourine",360,275,150,50);
+    text("10000 flourine",355,335,150,50);
+    text("cost:100000 oxygen",355,60,250,50);
+    text("cost:500000 oxygen",355,120,250,50);
+    text("cost:1000000 oxygen",355,180,250,50);
+    text("cost:2500000 oxygen",355,240,250,50);
+    text("cost:10000000 oxygen",355,300,250,50);
+    text("cost:25000000 oxygen",355,360,250,50);
+};
+var drawScene12 = function(){
+    background(255, 255, 255);
+    fill(255, 94, 0);
+    rect(150,30,150,50);
+    rect(150,90,150,50);
+    rect(150,150,150,50);
+    rect(150,210,150,50);
+    rect(150,270,150,50);
+    rect(150,330,150,50);
+    rect(350,30,150,50);
+    rect(350,90,150,50);
+    rect(350,150,150,50);
+    rect(350,210,150,50);
+    rect(350,270,150,50);
+    rect(350,330,150,50);
+    fill(0, 0, 0);
+    textSize(20);
+    text("1 neon",175,35,150,50);
+    text("3 neon",175,95,150,50);
+    text("7 neon",175,155,150,50);
+    text("20 neon",175,215,150,50);
+    text("45 neon",175,275,150,50);
+    text("100 neon",175,335,150,50);
+    text("cost:100 flourine",165,60,250,50);
+    text("cost:500 flourine",165,120,250,50);
+    text("cost:1000 flourine",160,180,250,50);
+    text("cost:2500 flourine",160,240,250,50);
+    text("cost:10000 flourine",155,300,250,50);
+    text("cost:25000 flourine",155,360,250,50);
+    text("250 neon",365,35,150,50);
+    text("450 neon",365,95,150,50);
+    text("1000 neon",360,155,150,50);
+    text("2500 neon",360,215,150,50);
+    text("4500 neon",360,275,150,50);
+    text("10000 neon",355,335,150,50);
+    text("cost:100000 flourine",355,60,250,50);
+    text("cost:500000 flourine",355,120,250,50);
+    text("cost:1000000 flourine",355,180,250,50);
+    text("cost:2500000 flourine",355,240,250,50);
+    text("cost:10000000 flourine",355,300,250,50);
+    text("cost:25000000 flourine",355,360,250,50);
+};
+var drawSceneEvent = function(){
+    var eventE = eventEnergy.toExponential(1);
+    var leafE = leaf.toExponential(1);
+    var barkE = bark.toExponential(1);
+    var acornE = acorn.toExponential(1);
+    var branchE = branch.toExponential(1);
+    var treeE = tree.toExponential(1);
+    background(255, 255, 255);
+    fill(0, 0, 0);
+    textSize(20);
+    text("event energy:",0,0,1000,100);
+    text("leaf:",0,20,100,100);
+    text("bark:",0,40,100,100);
+    text("acorn:",0,60,100,100);
+    text("branch:",0,80,100,100);
+    text("tree:",0,100,100,100);
+    text(eventE,130,0,1000,1000);
+    text(leafE,40,20,1000,1000);
+    text(barkE,50,40,1000,1000);
+    text(acornE,60,60,1000,1000);
+    text(branchE,70,80,1000,1000);
+    text(treeE,40,100,1000,1000);
+    fill(140, 81, 4);
+    rect(150,30,150,50);
+    rect(150,90,150,50);
+    rect(150,150,150,50);
+    rect(150,210,150,50);
+    rect(150,270,150,50);
+    rect(150,330,150,50);
+    rect(350,30,150,50);
+    rect(350,90,150,50);
+    rect(350,150,150,50);
+    rect(350,210,150,50);
+    fill(0, 255, 0);
+    rect(0,500,600,100);
+    fill(0, 0, 0);
+    textSize(40);
+    text("back", 260,540,100,100);
+    textSize(20);
+    text("1e+0 leaf",175,35,150,50);
+    text("1e+2 leaf",175,95,150,50);
+    text("1e+0 bark",175,155,150,50);
+    text("1e+2 bark",175,215,150,50);
+    text("1e+0 acorn",175,275,150,50);
+    text("1e+2 acorn",175,335,150,50);
+    text("cost:1e+2 event",155,60,200,50);
+    text("cost:1e+5 event",155,120,200,50);
+    text("cost:1e+2 leaf",160,180,150,50);
+    text("cost:1e+5 leaf",160,240,150,50);
+    text("cost:1e+2 bark",155,300,150,50);
+    text("cost:1e+5 bark",155,360,150,50);
+    text("1e+0 branch",365,35,150,50);
+    text("1e+2 branch",365,95,150,50);
+    text("1e+0 tree",360,155,150,50);
+    text("1e+2 tree",360,215,150,50);
+    text("cost:1e+2 acorn",355,60,250,50);
+    text("cost:1e+5 acorn",355,120,250,50);
+    text("cost:1e+2 branch",355,180,250,50);
+    text("cost:1e+5 branch",355,240,250,50);
+};
+var drawSceneEvent2 = function(){
+    background(0, 255, 21);
+    image(getImage("cute/TreeTall"),230,230,150,200);
+};
+var drawRebuild = function(){
+    background(255, 255, 255);
+    fill(255, 255, 255);
+    rect(150,30,150,50);
+    rect(150,90,150,50);
+    rect(150,150,150,50);
+    rect(150,210,150,50);
+    rect(150,270,150,50);
+    rect(150,330,150,50);
+    rect(350,30,150,50);
+    rect(350,90,150,50);
+    rect(350,150,150,50);
+    rect(350,210,150,50);
+    fill(0, 0, 0);
+    textSize(20);
+    text("1e9 cash",175,35,150,50);
+    text("1e8 multiplier",175,95,150,50);
+    text("1e7 hydrogen",175,155,150,50);
+    text("1e6 helium",175,215,150,50);
+    text("1e5 lithium",175,275,150,50);
+    text("1e4 berylium",175,335,150,50);
+    text("rq:100 helium",165,60,150,50);
+    text("rq:100 lithium",165,120,150,50);
+    text("rq:100 berylium",160,180,150,50);
+    text("rq:100 boron",160,240,150,50);
+    text("rq:100 carbon",155,300,150,50);
+    text("rq:100 nitrogen",155,360,150,50);
+    text("1e3 boron",365,35,150,50);
+    text("1e2 carbon",365,95,150,50);
+    text("1e1 nitrogen",360,155,150,50);
+    text("1e0 oxygen",360,215,150,50);
+    text("rq:100 oxygen",355,60,250,50);
+    text("rq:100 flourine",355,120,250,50);
+    text("rq:100 neon",355,180,250,50);
+    text("rq:10000 neon",355,240,250,50);
+};
+var saveChecker = function(){
+    cash = save_file[0];
+    multiplier = save_file[1];
+    hydrogen = save_file[2];
+    helium = save_file[3];
+    lithium = save_file[4];
+    berylium = save_file[5];
+    boron = save_file[6];
+    carbon = save_file[7];
+    nitrogen = save_file[8];
+    oxygen = save_file[9];
+    flourine = save_file[10];
+    neon = save_file[11];
+    eventEnergy = save_file[12];
+    leaf = save_file[13];
+    bark = save_file[14];
+    acorn = save_file[15];
+    branch = save_file[16];
+    tree = save_file[17];
+    sap = save_file[18];
+    gameSaved = false;
+};
+mouseClicked = function(){
+    if(mouseX >= 0 && mouseX <= 600 && mouseY >= 500 && mouseY <= 600){
+        scene = 2.5;
+    }
+    if(scene === 2 && mouseX >= 300 && mouseX <= 400 && mouseY >= 10 && mouseY <= 60){
+        scene = 1.5;
+    }
+    if(scene === 2 && mouseX >= 300 && mouseX <= 400 && mouseY >= 70 && mouseY <= 120){
+        scene = 3.5;
+    }
+    if(scene === 2 && mouseX >= 300 && mouseX <= 400 && mouseY >= 130 && mouseY <= 180){
+        scene = 4.5;
+    }
+    if(scene === 2 && mouseX >= 300 && mouseX <= 400 && mouseY >= 190 && mouseY <= 240){
+        scene = 5.5;
+    }
+    if(scene === 2 && mouseX >= 300 && mouseX <= 400 && mouseY >= 250 && mouseY <= 300){
+        scene = 6.5;
+    }
+    if(scene === 2 && mouseX >= 300 && mouseX <= 400 && mouseY >= 310 && mouseY <= 360){
+        scene = 7.5;
+    }
+    if(scene === 2 && mouseX >= 300 && mouseX <= 400 && mouseY >= 370 && mouseY <= 420){
+        scene = 8.5;
+    }
+    if(scene === 2 && mouseX >= 300 && mouseX <= 400 && mouseY >= 430 && mouseY <= 480){
+        scene = 9.5;
+    }
+    if(scene === 2 && mouseX >= 450 && mouseX <= 550 && mouseY >= 10 && mouseY <= 60){
+        scene = 10.5;
+    }
+    if(scene === 2 && mouseX >= 450 && mouseX <= 550 && mouseY >= 70 && mouseY <= 120){
+        scene = 11.5;
+    }
+    if(scene === 2 && mouseX >= 450 && mouseX <= 550 && mouseY >= 130 && mouseY <= 180){
+        scene = 12.5;
+    }
+    if(scene === 2 && mouseX >= 0 && mouseX <= 150 && mouseY >= 300 && mouseY <= 400){
+        scene = 200;
+    }
+    if(scene === 2 && mouseX >= 0 && mouseX <= 150 && mouseY >= 400 && mouseY <= 500){
+        scene = 192;
+    }
+    if(scene === 200 && mouseX >= 0 && mouseX <= 600 && mouseY >= 400 && mouseY <= 600){
+        scene = 2.5;
+    }
+    if(scene === 1 && cash >= 100 && mouseX >= 150 && mouseX <= 300 && mouseY >= 30 && mouseY <= 80){
+        multiplier += 1 * multiMulti;
+        cash -= 100;
+    }
+    if(scene === 1 && cash >= 500 && mouseX >= 150 && mouseX <= 300 && mouseY >= 90 && mouseY <= 140){
+        multiplier += 3 * multiMulti;
+        cash -= 500;
+    }
+    if(scene === 1 && cash >= 1000 && mouseX >= 150 && mouseX <= 300 && mouseY >= 150 && mouseY <= 200){
+        multiplier += 7 * multiMulti;
+        cash -= 1000;
+    }
+    if(scene === 1 && cash >= 2500 && mouseX >= 150 && mouseX <= 300 && mouseY >= 210 && mouseY <= 260){
+        multiplier += 20 * multiMulti;
+        cash -= 2500;
+    }
+    if(scene === 1 && cash >= 10000 && mouseX >= 150 && mouseX <= 300 && mouseY >= 270 && mouseY <= 320){
+        multiplier += 45 * multiMulti;
+        cash -= 10000;
+    }
+    if(scene === 1 && cash >= 25000 && mouseX >= 150 && mouseX <= 300 && mouseY >= 330 && mouseY <= 380){
+        multiplier += 100 * multiMulti;
+        cash -= 25000;
+    }
+    if(scene === 1 && cash >= 100000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 30 && mouseY <= 80){
+        multiplier += 250 * multiMulti;
+        cash -= 100000;
+    }
+    if(scene === 1 && cash >= 500000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 90 && mouseY <= 140){
+        multiplier += 450 * multiMulti;
+        cash -= 500000;
+    }
+    if(scene === 1 && cash >= 1000000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 150 && mouseY <= 200){
+        multiplier += 1000 * multiMulti;
+        cash -= 1000000;
+    }
+    if(scene === 1 && cash >= 2500000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 210 && mouseY <= 260){
+        multiplier += 2500 * multiMulti;
+        cash -= 2500000;
+    }
+    if(scene === 1 && cash >= 10000000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 270 && mouseY <= 320){
+        multiplier += 4500 * multiMulti;
+        cash -= 10000000;
+    }
+    if(scene === 1 && cash >= 25000000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 330 && mouseY <= 380){
+        multiplier += 10000 * multiMulti;
+        cash -= 25000000;
+    }
+    if(scene === 3 && multiplier >= 100 && mouseX >= 150 && mouseX <= 300 && mouseY >= 30 && mouseY <= 80){
+        hydrogen += 1 * hydrogenMulti;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 3 && multiplier >= 500 && mouseX >= 150 && mouseX <= 300 && mouseY >= 90 && mouseY <= 140){
+        hydrogen += 3 * hydrogenMulti;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 3 && multiplier >= 1000 && mouseX >= 150 && mouseX <= 300 && mouseY >= 150 && mouseY <= 200){
+        hydrogen += 7 * hydrogenMulti;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 3 && multiplier >= 2500 && mouseX >= 150 && mouseX <= 300 && mouseY >= 210 && mouseY <= 260){
+        hydrogen += 20 * hydrogenMulti;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 3 && multiplier >= 10000 && mouseX >= 150 && mouseX <= 300 && mouseY >= 270 && mouseY <= 320){
+        hydrogen += 45 * hydrogenMulti;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 3 && multiplier >= 25000 && mouseX >= 150 && mouseX <= 300 && mouseY >= 330 && mouseY <= 380){
+        hydrogen += 100 * hydrogenMulti;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 3 && multiplier >= 100000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 30 && mouseY <= 80){
+        hydrogen += 250 * hydrogenMulti;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 3 && multiplier >= 500000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 90 && mouseY <= 140){
+        hydrogen += 450 * hydrogenMulti;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 3 && multiplier >= 1000000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 150 && mouseY <= 200){
+        hydrogen += 1000 * hydrogenMulti;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 3 && multiplier >= 2500000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 210 && mouseY <= 260){
+        hydrogen += 2500 * hydrogenMulti;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 3 && multiplier >= 10000000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 270 && mouseY <= 320){
+        hydrogen += 4500 * hydrogenMulti;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 3 && multiplier >= 25000000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 330 && mouseY <= 380){
+        hydrogen += 10000 * hydrogenMulti;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 4 && hydrogen >= 100 && mouseX >= 150 && mouseX <= 300 && mouseY >= 30 && mouseY <= 80){
+        helium += 1 * heliumMulti;
+        hydrogen = 0;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 4 && hydrogen >= 500 && mouseX >= 150 && mouseX <= 300 && mouseY >= 90 && mouseY <= 140){
+        helium += 3 * heliumMulti;
+        hydrogen = 0;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 4 && hydrogen >= 1000 && mouseX >= 150 && mouseX <= 300 && mouseY >= 150 && mouseY <= 200){
+        helium += 7 * heliumMulti;
+        hydrogen = 0;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 4 && hydrogen >= 2500 && mouseX >= 150 && mouseX <= 300 && mouseY >= 210 && mouseY <= 260){
+        helium += 20 * heliumMulti;
+        hydrogen = 0;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 4 && hydrogen >= 10000 && mouseX >= 150 && mouseX <= 300 && mouseY >= 270 && mouseY <= 320){
+        helium += 45 * heliumMulti;
+        hydrogen = 0;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 4 && hydrogen >= 25000 && mouseX >= 150 && mouseX <= 300 && mouseY >= 330 && mouseY <= 380){
+        helium += 100 * heliumMulti;
+        hydrogen = 0;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 4 && hydrogen >= 100000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 30 && mouseY <= 80){
+        helium += 250 * heliumMulti;
+        hydrogen = 0;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 4 && hydrogen >= 500000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 90 && mouseY <= 140){
+        helium += 450 * heliumMulti;
+        hydrogen = 0;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 4 && hydrogen >= 1000000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 150 && mouseY <= 200){
+        helium += 1000 * heliumMulti;
+        hydrogen = 0;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 4 && hydrogen >= 2500000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 210 && mouseY <= 260){
+        helium += 2500 * heliumMulti;
+        hydrogen = 0;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 4 && hydrogen >= 10000000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 270 && mouseY <= 320){
+        helium += 4500 * heliumMulti;
+        hydrogen = 0;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 4 && hydrogen >= 25000000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 330 && mouseY <= 380){
+        helium += 10000 * heliumMulti;
+        hydrogen = 0;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 5 && helium >= 100 && mouseX >= 150 && mouseX <= 300 && mouseY >= 30 && mouseY <= 80){
+        lithium += 1 * lithiumMulti;
+        helium = 0;
+        hydrogen = 0;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 5 && helium >= 500 && mouseX >= 150 && mouseX <= 300 && mouseY >= 90 && mouseY <= 140){
+        lithium += 3 * lithiumMulti;
+        helium = 0;
+        hydrogen = 0;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 5 && helium >= 1000 && mouseX >= 150 && mouseX <= 300 && mouseY >= 150 && mouseY <= 200){
+        lithium += 7 * lithiumMulti;
+        helium = 0;
+        hydrogen = 0;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 5 && helium >= 2500 && mouseX >= 150 && mouseX <= 300 && mouseY >= 210 && mouseY <= 260){
+        lithium += 20 * lithiumMulti;
+        helium = 0;
+        hydrogen = 0;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 5 && helium >= 10000 && mouseX >= 150 && mouseX <= 300 && mouseY >= 270 && mouseY <= 320){
+        lithium += 45 * lithiumMulti;
+        helium = 0;
+        hydrogen = 0;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 5 && helium >= 25000 && mouseX >= 150 && mouseX <= 300 && mouseY >= 330 && mouseY <= 380){
+        lithium += 100 * lithiumMulti;
+        helium = 0;
+        hydrogen = 0;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 5 && helium >= 100000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 30 && mouseY <= 80){
+        lithium += 250 * lithiumMulti;
+        helium = 0;
+        hydrogen = 0;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 5 && helium >= 500000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 90 && mouseY <= 140){
+        lithium += 450 * lithiumMulti;
+        helium = 0;
+        hydrogen = 0;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 5 && helium >= 1000000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 150 && mouseY <= 200){
+        lithium += 1000 * lithiumMulti;
+        helium = 0;
+        hydrogen = 0;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 5 && helium >= 2500000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 210 && mouseY <= 260){
+        lithium += 2500 * lithiumMulti;
+        helium = 0;
+        hydrogen = 0;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 5 && helium >= 10000000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 270 && mouseY <= 320){
+        lithium += 4500 * lithiumMulti;
+        helium = 0;
+        hydrogen = 0;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 5 && helium >= 25000000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 330 && mouseY <= 380){
+        lithium += 10000 * lithiumMulti;
+        helium = 0;
+        hydrogen = 0;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 6 && lithium >= 100 && mouseX >= 150 && mouseX <= 300 && mouseY >= 30 && mouseY <= 80){
+        berylium += 1 * beryliumMulti;
+        lithium = 0;
+        helium = 0;
+        hydrogen = 0;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 6 && lithium >= 500 && mouseX >= 150 && mouseX <= 300 && mouseY >= 90 && mouseY <= 140){
+        berylium += 3 * beryliumMulti;
+        lithium = 0;
+        helium = 0;
+        hydrogen = 0;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 6 && lithium >= 1000 && mouseX >= 150 && mouseX <= 300 && mouseY >= 150 && mouseY <= 200){
+        berylium += 7 * beryliumMulti;
+        lithium = 0;
+        helium = 0;
+        hydrogen = 0;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 6 && lithium >= 2500 && mouseX >= 150 && mouseX <= 300 && mouseY >= 210 && mouseY <= 260){
+        berylium += 20 * beryliumMulti;
+        lithium = 0;
+        helium = 0;
+        hydrogen = 0;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 6 && lithium >= 10000 && mouseX >= 150 && mouseX <= 300 && mouseY >= 270 && mouseY <= 320){
+        berylium += 45 * beryliumMulti;
+        lithium = 0;
+        helium = 0;
+        hydrogen = 0;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 6 && lithium >= 25000 && mouseX >= 150 && mouseX <= 300 && mouseY >= 330 && mouseY <= 380){
+        berylium += 100 * beryliumMulti;
+        lithium = 0;
+        helium = 0;
+        hydrogen = 0;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 6 && lithium >= 100000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 30 && mouseY <= 80){
+        berylium += 250 * beryliumMulti;
+        lithium = 0;
+        helium = 0;
+        hydrogen = 0;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 6 && lithium >= 500000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 90 && mouseY <= 140){
+        berylium += 450 * beryliumMulti;
+        lithium = 0;
+        helium = 0;
+        hydrogen = 0;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 6 && lithium >= 1000000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 150 && mouseY <= 200){
+        berylium += 1000 * beryliumMulti;
+        lithium = 0;
+        helium = 0;
+        hydrogen = 0;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 6 && lithium >= 2500000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 210 && mouseY <= 260){
+        berylium += 2500 * beryliumMulti;
+        lithium = 0;
+        helium = 0;
+        hydrogen = 0;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 6 && lithium >= 10000000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 270 && mouseY <= 320){
+        berylium += 4500 * beryliumMulti;
+        lithium = 0;
+        helium = 0;
+        hydrogen = 0;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 6 && lithium >= 25000000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 330 && mouseY <= 380){
+        berylium += 10000 * beryliumMulti;
+        lithium = 0;
+        helium = 0;
+        hydrogen = 0;
+        multiplier = 0;
+        cash = 0;
+    }
+    if(scene === 200 && eventEnergy >= 100 && mouseX >= 150 && mouseX <= 300 && mouseY >= 30 && mouseY <= 80){
+        leaf += 1 * leafMulti;
+        eventEnergy -= 100;
+    }
+    if(scene === 200 && eventEnergy >= 10000 && mouseX >= 150 && mouseX <= 300 && mouseY >= 90 && mouseY <= 140){
+        leaf += 100 * leafMulti;
+        eventEnergy -= 10000;
+    }
+    if(scene === 200 && leaf >= 100 && mouseX >= 150 && mouseX <= 300 && mouseY >= 150 && mouseY <= 200){
+        bark += 1 * barkMulti;
+        leaf = 0;
+        eventEnergy = 0;
+    }
+    if(scene === 200 && leaf >= 10000 && mouseX >= 150 && mouseX <= 300 && mouseY >= 210 && mouseY <= 260){
+        bark += 100 * barkMulti;
+        leaf = 0;
+        eventEnergy = 0;
+    }
+    if(scene === 200 && bark >= 100 && mouseX >= 150 && mouseX <= 300 && mouseY >= 270 && mouseY <= 320){
+        acorn += 1 * acornMulti;
+        bark = 0;
+        leaf = 0;
+        eventEnergy = 0;
+    }
+    if(scene === 200 && bark >= 10000 && mouseX >= 150 && mouseX <= 300 && mouseY >= 330 && mouseY <= 380){
+        acorn += 100 * acornMulti;
+        bark = 0;
+        leaf = 0;
+        eventEnergy = 0;
+    }
+    if(scene === 200 && acorn >= 100 && mouseX >= 350 && mouseX <= 500 && mouseY >= 30 && mouseY <= 80){
+        branch += 1 * branchMulti;
+        acorn = 0;
+        bark = 0;
+        leaf = 0;
+        eventEnergy = 0;
+    }
+    if(scene === 200 && acorn >= 10000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 90 && mouseY <= 140){
+        branch += 100 * branchMulti;
+        acorn = 0;
+        bark = 0;
+        leaf = 0;
+        eventEnergy = 0;
+    }
+    if(scene === 200 && branch >= 100 && mouseX >= 350 && mouseX <= 500 && mouseY >= 150 && mouseY <= 200){
+        tree += 1;
+        branch = 0;
+        acorn = 0;
+        bark = 0;
+        leaf = 0;
+        eventEnergy = 0;
+    }
+    if(scene === 200 && branch >= 10000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 210 && mouseY <= 260){
+        tree += 100;
+        branch = 0;
+        acorn = 0;
+        bark = 0;
+        leaf = 0;
+        eventEnergy = 0;
+    }
+    if(scene === 200 && mouseX >= 599 && mouseY <= 1){
+        scene = 201;
+    }
+    if(scene === 201 && mouseX >= 230 && mouseX <= 380 && mouseY >= 230 && mouseY <= 430){
+    sapOwned = true;
+    scene = 200;
+    println("you obtained sap!");
+    } 
+    if(scene === 192 && helium >= 100 && mouseX >= 150 && mouseX <= 300 && mouseY >= 30 && mouseY <= 80){
+        cash += 1000000000 * cashMulti;
+    }
+    if(scene === 192 && lithium >= 100 && mouseX >= 150 && mouseX <= 300 && mouseY >= 90 && mouseY <= 140){
+        multiplier += 100000000 * multiMulti;
+    }
+    if(scene === 192 && berylium >= 100 && mouseX >= 150 && mouseX <= 300 && mouseY >= 150 && mouseY <= 200){
+        hydrogen += 10000000 * hydrogenMulti;
+    }
+    if(scene === 192 && boron >= 100 && mouseX >= 150 && mouseX <= 300 && mouseY >= 210 && mouseY <= 260){
+        helium += 1000000 * heliumMulti;
+    }
+    if(scene === 192 && carbon >= 100 && mouseX >= 150 && mouseX <= 300 && mouseY >= 270 && mouseY <= 320){
+        lithium += 100000 * lithiumMulti;
+    }
+    if(scene === 192 && nitrogen >= 100 && mouseX >= 150 && mouseX <= 300 && mouseY >= 330 && mouseY <= 380){
+        berylium += 10000 * beryliumMulti;
+    }
+    if(scene === 192 && oxygen >= 100 && mouseX >= 350 && mouseX <= 500 && mouseY >= 30 && mouseY <= 80){
+        boron += 1000 * boronMulti;
+    }
+    if(scene === 192 && flourine >= 100 && mouseX >= 350 && mouseX <= 500 && mouseY >= 90 && mouseY <= 140){
+        carbon += 100 * carbonMulti;
+    }
+    if(scene === 192 && neon >= 100 && mouseX >= 350 && mouseX <= 500 && mouseY >= 150 && mouseY <= 200){
+        nitrogen += 10 * nitrogenMulti;
+    }
+    if(scene === 192 && neon >= 10000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 210 && mouseY <= 260){
+        oxygen += 1 * oxygenMulti;
+    }
+};
+keyTyped = function(){
+    this._clearLogs();
+    myString += key.toString();
+    if(myString === "e"){
+        save_file = [cash,multiplier,hydrogen,helium,lithium,berylium,boron,carbon,nitrogen,oxygen,flourine,neon,eventEnergy,leaf,bark,acorn,branch,tree,sap];
+        println(save_file);
+        myString = "";
+        
+    }
+    if(myString === "i"){
+        gameSaved = true;
+        myString = "";
+    }
+};
+draw = function(){
+    if(scene === 1.5){
+        drawScene1();
+        drawStuff();
+        scene = 1;
+    }
+    if(scene === 2.5){
+        drawScene2();
+        drawStuff();
+        scene = 2;
+    }
+    if(scene === 3.5){
+        drawScene3();
+        drawStuff();
+        scene = 3;
+    }
+    if(scene === 4.5){
+        drawScene4();
+        drawStuff();
+        scene = 4;
+    }
+    if(scene === 5.5){
+        drawScene5();
+        drawStuff();
+        scene = 5;
+    }
+    if(scene === 6.5){
+        drawScene6();
+        drawStuff();
+        scene = 6;
+    }
+    if(scene === 7.5){
+        drawScene7();
+        drawStuff();
+        scene = 7;
+    }
+    if(scene === 8.5){
+        drawScene8();
+        drawStuff();
+        scene = 8;
+    }
+    if(scene === 9.5){
+        drawScene9();
+        drawStuff();
+        scene = 9;
+    }
+    if(scene === 10.5){
+        drawScene10();
+        drawStuff();
+        scene = 10;
+    }
+    if(scene === 11.5){
+        drawScene11();
+        drawStuff();
+        scene = 11;
+    }
+    if(scene === 12.5){
+        drawScene12();
+        drawStuff();
+        scene = 12;
+    }
+    if(scene === 1){
+        drawScene1();
+        drawStuff();
+    }
+    if(scene === 2){
+        drawScene2();
+        drawStuff();
+    }
+    if(scene === 3){
+        drawScene3();
+        drawStuff();
+    }
+    if(scene === 4){
+        drawScene4();
+        drawStuff();
+    }
+    if(scene === 5){
+        drawScene5();
+        drawStuff();
+    }
+    if(scene === 6){
+        drawScene6();
+        drawStuff();
+    }
+    if(scene === 7){
+        drawScene7();
+        drawStuff();
+    }
+    if(scene === 8){
+        drawScene8();
+        drawStuff();
+    }
+    if(scene === 9){
+        drawScene9();
+        drawStuff();
+    }
+    if(scene === 10){
+        drawScene10();
+        drawStuff();
+    }
+    if(scene === 11){
+        drawScene11();
+        drawStuff();
+    }
+    if(scene === 12){
+        drawScene12();
+        drawStuff();
+    }
+    if(scene === 192){
+        drawRebuild();
+        drawStuff();
+    }
+    if(scene === 200){
+        drawSceneEvent();
+    }
+    if(scene === 201){
+        drawSceneEvent2();
+    }
+    if(sapOwned === true){
+        sap = 1;
+    }
+    cash += 0.5*cashMulti;
+    eventEnergy += 0.1*eventMulti;
+    cashMulti = multiplier*2;
+    multiMulti = hydrogen*4;
+    hydrogenMulti = helium*8;
+    heliumMulti = lithium*16;
+    lithiumMulti = berylium*32;
+    beryliumMulti = boron*64;
+    boronMulti = carbon*128;
+    carbonMulti = nitrogen*256 + sap*1000000;
+    nitrogenMulti = oxygen*512;
+    oxygenMulti = flourine*1024;
+    flourineMulti = neon*2048;
+    eventMulti = leaf*2;
+    leafMulti = bark*2 + sap*10;
+    barkMulti = acorn*4 + sap*7;
+    acornMulti = branch*8 + sap*5;
+    branchMulti = tree*16 + sap*3;
+    if(cashMulti === 0){
+        cashMulti = 1;
+    }
+    if(multiMulti === 0){
+        multiMulti = 1;
+    }
+    if(hydrogenMulti === 0){
+        hydrogenMulti = 1;
+    }
+    if(heliumMulti === 0){
+        heliumMulti = 1;
+    }
+    if(lithiumMulti === 0){
+        lithiumMulti = 1;
+    }
+    if(beryliumMulti === 0){
+        beryliumMulti = 1;
+    }
+    if(boronMulti === 0){
+        boronMulti = 1;
+    }
+    if(carbonMulti === 0){
+        carbonMulti = 1;
+    }
+    if(nitrogenMulti === 0){
+        nitrogenMulti = 1;
+    }
+    if(oxygenMulti === 0){
+        oxygenMulti = 1;
+    }
+    if(flourineMulti === 0){
+        flourineMulti = 1;
+    }
+    if(eventMulti === 0){
+        eventMulti = 1;
+    }
+    if(leafMulti === 0){
+        leafMulti = 1;
+    }
+    if(barkMulti === 0){
+        barkMulti = 1;
+    }
+    if(acornMulti === 0){
+        acornMulti = 1;
+    }
+    if(branchMulti === 0){
+        branchMulti = 1;
+    }
+    if(gameSaved === true){
+        saveChecker();
+    }
+};
+
