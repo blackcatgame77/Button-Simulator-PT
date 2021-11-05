@@ -23,48 +23,671 @@ var oxygenMulti = 1;
 var flourineMulti = 1;
 var scene = 1.5;
 
-function buttonChecker(event){
-	let mouseX = event.pageX
+function sceneChanger(event) {
+  let mouseX = event.pageX
   let mouseY = event.pageY
-  if(mouseX >= 0 && mouseX <= 600 && mouseY >= 500 && mouseY <= 600){
-        scene = 2.5;
-    }
-    if(scene === 2 && mouseX >= 300 && mouseX <= 400 && mouseY >= 10 && mouseY <= 60){
-        scene = 1.5;
-    }
-    if(scene === 2 && mouseX >= 300 && mouseX <= 400 && mouseY >= 70 && mouseY <= 120){
-        scene = 3.5;
-    }
-    if(scene === 2 && mouseX >= 300 && mouseX <= 400 && mouseY >= 130 && mouseY <= 180){
-        scene = 4.5;
-    }
-    if(scene === 2 && mouseX >= 300 && mouseX <= 400 && mouseY >= 190 && mouseY <= 240){
-        scene = 5.5;
-    }
-    if(scene === 2 && mouseX >= 300 && mouseX <= 400 && mouseY >= 250 && mouseY <= 300){
-        scene = 6.5;
-    }
-    if(scene === 2 && mouseX >= 300 && mouseX <= 400 && mouseY >= 310 && mouseY <= 360){
-        scene = 7.5;
-    }
-    if(scene === 2 && mouseX >= 300 && mouseX <= 400 && mouseY >= 370 && mouseY <= 420){
-        scene = 8.5;
-    }
-    if(scene === 2 && mouseX >= 300 && mouseX <= 400 && mouseY >= 430 && mouseY <= 480){
-        scene = 9.5;
-    }
-    if(scene === 2 && mouseX >= 450 && mouseX <= 550 && mouseY >= 10 && mouseY <= 60){
-        scene = 10.5;
-    }
-    if(scene === 2 && mouseX >= 450 && mouseX <= 550 && mouseY >= 70 && mouseY <= 120){
-        scene = 11.5;
-    }
-    if(scene === 2 && mouseX >= 450 && mouseX <= 550 && mouseY >= 130 && mouseY <= 180){
-        scene = 12.5;
-    }
-    if(scene === 2 && mouseX >= 0 && mouseX <= 150 && mouseY >= 400 && mouseY <= 500){
-        scene = 192;
-    }
+  if (mouseX >= 0 && mouseX <= 600 && mouseY >= 500 && mouseY <= 600) {
+    scene = 2.5;
+  }
+  if (scene === 2 && mouseX >= 300 && mouseX <= 400 && mouseY >= 10 && mouseY <= 60) {
+    scene = 1.5;
+  }
+  if (scene === 2 && mouseX >= 300 && mouseX <= 400 && mouseY >= 70 && mouseY <= 120) {
+    scene = 3.5;
+  }
+  if (scene === 2 && mouseX >= 300 && mouseX <= 400 && mouseY >= 130 && mouseY <= 180) {
+    scene = 4.5;
+  }
+  if (scene === 2 && mouseX >= 300 && mouseX <= 400 && mouseY >= 190 && mouseY <= 240) {
+    scene = 5.5;
+  }
+  if (scene === 2 && mouseX >= 300 && mouseX <= 400 && mouseY >= 250 && mouseY <= 300) {
+    scene = 6.5;
+  }
+  if (scene === 2 && mouseX >= 300 && mouseX <= 400 && mouseY >= 310 && mouseY <= 360) {
+    scene = 7.5;
+  }
+  if (scene === 2 && mouseX >= 300 && mouseX <= 400 && mouseY >= 370 && mouseY <= 420) {
+    scene = 8.5;
+  }
+  if (scene === 2 && mouseX >= 300 && mouseX <= 400 && mouseY >= 430 && mouseY <= 480) {
+    scene = 9.5;
+  }
+  if (scene === 2 && mouseX >= 450 && mouseX <= 550 && mouseY >= 10 && mouseY <= 60) {
+    scene = 10.5;
+  }
+  if (scene === 2 && mouseX >= 450 && mouseX <= 550 && mouseY >= 70 && mouseY <= 120) {
+    scene = 11.5;
+  }
+  if (scene === 2 && mouseX >= 450 && mouseX <= 550 && mouseY >= 130 && mouseY <= 180) {
+    scene = 12.5;
+  }
+  if (scene === 2 && mouseX >= 0 && mouseX <= 150 && mouseY >= 400 && mouseY <= 500) {
+    scene = 192;
+  }
+}
+
+function multiplierGiver() {
+  let mouseX = event.pageX
+  let mouseY = event.pageY
+  if (scene === 1 && cash >= 100 && mouseX >= 150 && mouseX <= 300 && mouseY >= 30 && mouseY <= 80) {
+    multiplier += 1 * multiMulti;
+    cash -= 100;
+  }
+  if (scene === 1 && cash >= 500 && mouseX >= 150 && mouseX <= 300 && mouseY >= 90 && mouseY <= 140) {
+    multiplier += 3 * multiMulti;
+    cash -= 500;
+  }
+  if (scene === 1 && cash >= 1000 && mouseX >= 150 && mouseX <= 300 && mouseY >= 150 && mouseY <= 200) {
+    multiplier += 7 * multiMulti;
+    cash -= 1000;
+  }
+  if (scene === 1 && cash >= 2500 && mouseX >= 150 && mouseX <= 300 && mouseY >= 210 && mouseY <= 260) {
+    multiplier += 20 * multiMulti;
+    cash -= 2500;
+  }
+  if (scene === 1 && cash >= 10000 && mouseX >= 150 && mouseX <= 300 && mouseY >= 270 && mouseY <= 320) {
+    multiplier += 45 * multiMulti;
+    cash -= 10000;
+  }
+  if (scene === 1 && cash >= 25000 && mouseX >= 150 && mouseX <= 300 && mouseY >= 330 && mouseY <= 380) {
+    multiplier += 100 * multiMulti;
+    cash -= 25000;
+  }
+  if (scene === 1 && cash >= 100000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 30 && mouseY <= 80) {
+    multiplier += 250 * multiMulti;
+    cash -= 100000;
+  }
+  if (scene === 1 && cash >= 500000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 90 && mouseY <= 140) {
+    multiplier += 450 * multiMulti;
+    cash -= 500000;
+  }
+  if (scene === 1 && cash >= 1000000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 150 && mouseY <= 200) {
+    multiplier += 1000 * multiMulti;
+    cash -= 1000000;
+  }
+  if (scene === 1 && cash >= 2500000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 210 && mouseY <= 260) {
+    multiplier += 2500 * multiMulti;
+    cash -= 2500000;
+  }
+  if (scene === 1 && cash >= 10000000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 270 && mouseY <= 320) {
+    multiplier += 4500 * multiMulti;
+    cash -= 10000000;
+  }
+  if (scene === 1 && cash >= 25000000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 330 && mouseY <= 380) {
+    multiplier += 10000 * multiMulti;
+    cash -= 25000000;
+  }
+}
+
+function hydrogenGiver() {
+  let mouseX = event.pageX
+  let mouseY = event.pageY
+  if (scene === 3 && multiplier >= 100 && mouseX >= 150 && mouseX <= 300 && mouseY >= 30 && mouseY <= 80) {
+    hydrogen += 1 * hydrogenMulti;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 3 && multiplier >= 500 && mouseX >= 150 && mouseX <= 300 && mouseY >= 90 && mouseY <= 140) {
+    hydrogen += 3 * hydrogenMulti;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 3 && multiplier >= 1000 && mouseX >= 150 && mouseX <= 300 && mouseY >= 150 && mouseY <= 200) {
+    hydrogen += 7 * hydrogenMulti;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 3 && multiplier >= 2500 && mouseX >= 150 && mouseX <= 300 && mouseY >= 210 && mouseY <= 260) {
+    hydrogen += 20 * hydrogenMulti;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 3 && multiplier >= 10000 && mouseX >= 150 && mouseX <= 300 && mouseY >= 270 && mouseY <= 320) {
+    hydrogen += 45 * hydrogenMulti;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 3 && multiplier >= 25000 && mouseX >= 150 && mouseX <= 300 && mouseY >= 330 && mouseY <= 380) {
+    hydrogen += 100 * hydrogenMulti;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 3 && multiplier >= 100000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 30 && mouseY <= 80) {
+    hydrogen += 250 * hydrogenMulti;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 3 && multiplier >= 500000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 90 && mouseY <= 140) {
+    hydrogen += 450 * hydrogenMulti;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 3 && multiplier >= 1000000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 150 && mouseY <= 200) {
+    hydrogen += 1000 * hydrogenMulti;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 3 && multiplier >= 2500000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 210 && mouseY <= 260) {
+    hydrogen += 2500 * hydrogenMulti;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 3 && multiplier >= 10000000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 270 && mouseY <= 320) {
+    hydrogen += 4500 * hydrogenMulti;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 3 && multiplier >= 25000000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 330 && mouseY <= 380) {
+    hydrogen += 10000 * hydrogenMulti;
+    multiplier = 0;
+    cash = 0;
+  }
+}
+
+function heliumGiver() {
+  let mouseX = event.pageX
+  let mouseY = event.pageY
+  if (scene === 4 && hydrogen >= 100 && mouseX >= 150 && mouseX <= 300 && mouseY >= 30 && mouseY <= 80) {
+    helium += 1 * heliumMulti;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 4 && hydrogen >= 500 && mouseX >= 150 && mouseX <= 300 && mouseY >= 90 && mouseY <= 140) {
+    helium += 3 * heliumMulti;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 4 && hydrogen >= 1000 && mouseX >= 150 && mouseX <= 300 && mouseY >= 150 && mouseY <= 200) {
+    helium += 7 * heliumMulti;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 4 && hydrogen >= 2500 && mouseX >= 150 && mouseX <= 300 && mouseY >= 210 && mouseY <= 260) {
+    helium += 20 * heliumMulti;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 4 && hydrogen >= 10000 && mouseX >= 150 && mouseX <= 300 && mouseY >= 270 && mouseY <= 320) {
+    helium += 45 * heliumMulti;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 4 && hydrogen >= 25000 && mouseX >= 150 && mouseX <= 300 && mouseY >= 330 && mouseY <= 380) {
+    helium += 100 * heliumMulti;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 4 && hydrogen >= 100000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 30 && mouseY <= 80) {
+    helium += 250 * heliumMulti;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 4 && hydrogen >= 500000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 90 && mouseY <= 140) {
+    helium += 450 * heliumMulti;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 4 && hydrogen >= 1000000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 150 && mouseY <= 200) {
+    helium += 1000 * heliumMulti;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 4 && hydrogen >= 2500000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 210 && mouseY <= 260) {
+    helium += 2500 * heliumMulti;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 4 && hydrogen >= 10000000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 270 && mouseY <= 320) {
+    helium += 4500 * heliumMulti;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 4 && hydrogen >= 25000000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 330 && mouseY <= 380) {
+    helium += 10000 * heliumMulti;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+}
+
+function lithiumGiver() {
+  let mouseX = event.pageX
+  let mouseY = event.pageY
+  if (scene === 5 && helium >= 100 && mouseX >= 150 && mouseX <= 300 && mouseY >= 30 && mouseY <= 80) {
+    lithium += 1 * lithiumMulti;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 5 && helium >= 500 && mouseX >= 150 && mouseX <= 300 && mouseY >= 90 && mouseY <= 140) {
+    lithium += 3 * lithiumMulti;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 5 && helium >= 1000 && mouseX >= 150 && mouseX <= 300 && mouseY >= 150 && mouseY <= 200) {
+    lithium += 7 * lithiumMulti;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 5 && helium >= 2500 && mouseX >= 150 && mouseX <= 300 && mouseY >= 210 && mouseY <= 260) {
+    lithium += 20 * lithiumMulti;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 5 && helium >= 10000 && mouseX >= 150 && mouseX <= 300 && mouseY >= 270 && mouseY <= 320) {
+    lithium += 45 * lithiumMulti;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 5 && helium >= 25000 && mouseX >= 150 && mouseX <= 300 && mouseY >= 330 && mouseY <= 380) {
+    lithium += 100 * lithiumMulti;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 5 && helium >= 100000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 30 && mouseY <= 80) {
+    lithium += 250 * lithiumMulti;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 5 && helium >= 500000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 90 && mouseY <= 140) {
+    lithium += 450 * lithiumMulti;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 5 && helium >= 1000000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 150 && mouseY <= 200) {
+    lithium += 1000 * lithiumMulti;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 5 && helium >= 2500000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 210 && mouseY <= 260) {
+    lithium += 2500 * lithiumMulti;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 5 && helium >= 10000000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 270 && mouseY <= 320) {
+    lithium += 4500 * lithiumMulti;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 5 && helium >= 25000000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 330 && mouseY <= 380) {
+    lithium += 10000 * lithiumMulti;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+}
+
+function beryliumGiver() {
+  let mouseX = event.pageX
+  let mouseY = event.pageY
+  if (scene === 6 && lithium >= 100 && mouseX >= 150 && mouseX <= 300 && mouseY >= 30 && mouseY <= 80) {
+    berylium += 1 * beryliumMulti;
+    lithium = 0;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 6 && lithium >= 500 && mouseX >= 150 && mouseX <= 300 && mouseY >= 90 && mouseY <= 140) {
+    berylium += 3 * beryliumMulti;
+    lithium = 0;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 6 && lithium >= 1000 && mouseX >= 150 && mouseX <= 300 && mouseY >= 150 && mouseY <= 200) {
+    berylium += 7 * beryliumMulti;
+    lithium = 0;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 6 && lithium >= 2500 && mouseX >= 150 && mouseX <= 300 && mouseY >= 210 && mouseY <= 260) {
+    berylium += 20 * beryliumMulti;
+    lithium = 0;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 6 && lithium >= 10000 && mouseX >= 150 && mouseX <= 300 && mouseY >= 270 && mouseY <= 320) {
+    berylium += 45 * beryliumMulti;
+    lithium = 0;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 6 && lithium >= 25000 && mouseX >= 150 && mouseX <= 300 && mouseY >= 330 && mouseY <= 380) {
+    berylium += 100 * beryliumMulti;
+    lithium = 0;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 6 && lithium >= 100000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 30 && mouseY <= 80) {
+    berylium += 250 * beryliumMulti;
+    lithium = 0;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 6 && lithium >= 500000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 90 && mouseY <= 140) {
+    berylium += 450 * beryliumMulti;
+    lithium = 0;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 6 && lithium >= 1000000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 150 && mouseY <= 200) {
+    berylium += 1000 * beryliumMulti;
+    lithium = 0;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 6 && lithium >= 2500000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 210 && mouseY <= 260) {
+    berylium += 2500 * beryliumMulti;
+    lithium = 0;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 6 && lithium >= 10000000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 270 && mouseY <= 320) {
+    berylium += 4500 * beryliumMulti;
+    lithium = 0;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 6 && lithium >= 25000000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 330 && mouseY <= 380) {
+    berylium += 10000 * beryliumMulti;
+    lithium = 0;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+}
+
+function boronGiver() {
+  let mouseX = event.pageX
+  let mouseY = event.pageY
+  if (scene === 7 && berylium >= 100 && mouseX >= 150 && mouseX <= 300 && mouseY >= 30 && mouseY <= 80) {
+    boron += 1 * boronMulti;
+    berylium = 0;
+    lithium = 0;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 7 && berylium >= 500 && mouseX >= 150 && mouseX <= 300 && mouseY >= 90 && mouseY <= 140) {
+    boron += 3 * boronMulti;
+    berylium = 0;
+    lithium = 0;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 7 && berylium >= 1000 && mouseX >= 150 && mouseX <= 300 && mouseY >= 150 && mouseY <= 200) {
+    boron += 7 * boronMulti;
+    berylium = 0;
+    lithium = 0;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 7 && berylium >= 2500 && mouseX >= 150 && mouseX <= 300 && mouseY >= 210 && mouseY <= 260) {
+    boron += 20 * boronMulti;
+    berylium = 0;
+    lithium = 0;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 7 && berylium >= 10000 && mouseX >= 150 && mouseX <= 300 && mouseY >= 270 && mouseY <= 320) {
+    boron += 45 * boronMulti;
+    berylium = 0;
+    lithium = 0;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 7 && berylium >= 25000 && mouseX >= 150 && mouseX <= 300 && mouseY >= 330 && mouseY <= 380) {
+    boron += 100 * boronMulti;
+    berylium = 0;
+    lithium = 0;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 7 && berylium >= 100000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 30 && mouseY <= 80) {
+    boron += 250 * boronMulti;
+    berylium = 0;
+    lithium = 0;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 7 && berylium >= 500000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 90 && mouseY <= 140) {
+    boron += 450 * boronMulti;
+    berylium = 0;
+    lithium = 0;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 7 && berylium >= 1000000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 150 && mouseY <= 200) {
+    boron += 1000 * boronMulti;
+    berylium = 0;
+    lithium = 0;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 7 && berylium >= 2500000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 210 && mouseY <= 260) {
+    boron += 2500 * boronMulti;
+    berylium = 0;
+    lithium = 0;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 7 && berylium >= 10000000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 270 && mouseY <= 320) {
+    boron += 4500 * boronMulti;
+    berylium = 0;
+    lithium = 0;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 7 && berylium >= 25000000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 330 && mouseY <= 380) {
+    boron += 10000 * boronMulti;
+    berylium = 0;
+    lithium = 0;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+}
+
+function carbonGiver() {
+  let mouseX = event.pageX
+  let mouseY = event.pageY
+  if (scene === 8 && boron >= 100 && mouseX >= 150 && mouseX <= 300 && mouseY >= 30 && mouseY <= 80) {
+    carbon += 1 * carbonMulti;
+    boron = 0;
+    berylium = 0;
+    lithium = 0;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 8 && boron >= 500 && mouseX >= 150 && mouseX <= 300 && mouseY >= 90 && mouseY <= 140) {
+    carbon += 3 * carbonMulti;
+    boron = 0;
+    berylium = 0;
+    lithium = 0;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 8 && boron >= 1000 && mouseX >= 150 && mouseX <= 300 && mouseY >= 150 && mouseY <= 200) {
+    carbon += 7 * carbonMulti;
+    boron = 0;
+    berylium = 0;
+    lithium = 0;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 8 && boron >= 2500 && mouseX >= 150 && mouseX <= 300 && mouseY >= 210 && mouseY <= 260) {
+    carbon += 20 * carbonMulti;
+    boron = 0;
+    berylium = 0;
+    lithium = 0;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 8 && boron >= 10000 && mouseX >= 150 && mouseX <= 300 && mouseY >= 270 && mouseY <= 320) {
+    carbon += 45 * carbonMulti;
+    boron = 0;
+    berylium = 0;
+    lithium = 0;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 8 && boron >= 25000 && mouseX >= 150 && mouseX <= 300 && mouseY >= 330 && mouseY <= 380) {
+    carbon += 100 * carbonMulti;
+    boron = 0;
+    berylium = 0;
+    lithium = 0;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 8 && boron >= 100000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 30 && mouseY <= 80) {
+    carbon += 250 * carbonMulti;
+    boron = 0;
+    berylium = 0;
+    lithium = 0;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 8 && boron >= 500000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 90 && mouseY <= 140) {
+    carbon += 450 * carbonMulti;
+    boron = 0;
+    berylium = 0;
+    lithium = 0;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 8 && boron >= 1000000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 150 && mouseY <= 200) {
+    carbon += 1000 * carbonMulti;
+    boron = 0;
+    berylium = 0;
+    lithium = 0;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 8 && boron >= 2500000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 210 && mouseY <= 260) {
+    carbon += 2500 * carbonMulti;
+    boron = 0;
+    berylium = 0;
+    lithium = 0;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 8 && boron >= 10000000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 270 && mouseY <= 320) {
+    carbon += 4500 * carbonMulti;
+    boron = 0;
+    berylium = 0;
+    lithium = 0;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
+  if (scene === 8 && boron >= 25000000 && mouseX >= 350 && mouseX <= 500 && mouseY >= 330 && mouseY <= 380) {
+    carbon += 10000 * carbonMulti;
+    boron = 0;
+    berylium = 0;
+    lithium = 0;
+    helium = 0;
+    hydrogen = 0;
+    multiplier = 0;
+    cash = 0;
+  }
 }
 
 function drawAll() {
