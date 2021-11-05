@@ -6,6 +6,7 @@
     <title>HTML5 Game</title>
     <meta name="description" content="A basic button simulator">
     <meta name="author" content="BlackcatGame77">
+    <script type="text/javascript" src="main.js"></script>
   </head>
 
   <body>
@@ -18,7 +19,14 @@
       let context;
 
       window.onclick = function() {
-      	buttonChecker(event);
+      	sceneChanger(event);
+        multiplierGiver();
+        hydrogenGiver();
+        heliumGiver();
+        lithiumGiver();
+        beryliumGiver();
+        boronGiver();
+        carbonGiver();
       }
 
       window.onload = init;
@@ -35,7 +43,6 @@
       }
 
     </script>
-    <script src="js/main.js"></script>
   </body>
 
 </html>
