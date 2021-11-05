@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>HTML5 Game</title>
+    <meta name="description" content="A basic button simulator">
+    <meta name="author" content="BlackcatGame77">
+  </head>
+
+  <body>
+    <canvas id="canvas" width="600" height="600" style="border:1px solid lightgrey;">
+      Your browser does not support the HTML5 canvas tag.
+    </canvas>
+    <script>
+      "use strict";
+      let canvas;
+      let context;
+
+      window.onclick = function() {
+      	buttonChecker(event);
+      }
+
+      window.onload = init;
+
+      function init() {
+        canvas = document.getElementById('canvas');
+        context = canvas.getContext('2d');
+        window.requestAnimationFrame(gameLoop);
+      }
+
+      function gameLoop(timeStamp) {
+        draw();
+        window.requestAnimationFrame(gameLoop);
+      }
+
+    </script>
+  </body>
+
+</html>
