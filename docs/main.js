@@ -67,7 +67,7 @@ function sceneChanger(event) {
   }
 }
 
-function multiplierGiver() {
+function multiplierGiver(event) {
   let mouseX = event.pageX
   let mouseY = event.pageY
   if (scene === 1 && cash >= 100 && mouseX >= 150 && mouseX <= 300 && mouseY >= 30 && mouseY <= 80) {
@@ -120,7 +120,7 @@ function multiplierGiver() {
   }
 }
 
-function hydrogenGiver() {
+function hydrogenGiver(event) {
   let mouseX = event.pageX
   let mouseY = event.pageY
   if (scene === 3 && multiplier >= 100 && mouseX >= 150 && mouseX <= 300 && mouseY >= 30 && mouseY <= 80) {
@@ -185,7 +185,7 @@ function hydrogenGiver() {
   }
 }
 
-function heliumGiver() {
+function heliumGiver(event) {
   let mouseX = event.pageX
   let mouseY = event.pageY
   if (scene === 4 && hydrogen >= 100 && mouseX >= 150 && mouseX <= 300 && mouseY >= 30 && mouseY <= 80) {
@@ -262,7 +262,7 @@ function heliumGiver() {
   }
 }
 
-function lithiumGiver() {
+function lithiumGiver(event) {
   let mouseX = event.pageX
   let mouseY = event.pageY
   if (scene === 5 && helium >= 100 && mouseX >= 150 && mouseX <= 300 && mouseY >= 30 && mouseY <= 80) {
@@ -351,7 +351,7 @@ function lithiumGiver() {
   }
 }
 
-function beryliumGiver() {
+function beryliumGiver(event) {
   let mouseX = event.pageX
   let mouseY = event.pageY
   if (scene === 6 && lithium >= 100 && mouseX >= 150 && mouseX <= 300 && mouseY >= 30 && mouseY <= 80) {
@@ -452,7 +452,7 @@ function beryliumGiver() {
   }
 }
 
-function boronGiver() {
+function boronGiver(event) {
   let mouseX = event.pageX
   let mouseY = event.pageY
   if (scene === 7 && berylium >= 100 && mouseX >= 150 && mouseX <= 300 && mouseY >= 30 && mouseY <= 80) {
@@ -565,7 +565,7 @@ function boronGiver() {
   }
 }
 
-function carbonGiver() {
+function carbonGiver(event) {
   let mouseX = event.pageX
   let mouseY = event.pageY
   if (scene === 8 && boron >= 100 && mouseX >= 150 && mouseX <= 300 && mouseY >= 30 && mouseY <= 80) {
