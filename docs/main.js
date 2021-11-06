@@ -703,6 +703,42 @@ function drawAll() {
     drawScene3();
     scene = 3;
   }
+  if (scene === 4.5) {
+  	drawScene4();
+    scene = 4;
+  }
+  if (scene === 5.5) {
+  	drawScene5();
+    scene = 5;
+  }
+  if (scene === 6.5) {
+  	drawScene6();
+    scene = 6;
+  }
+  if (scene === 7.5) {
+  	drawScene7();
+    scene = 7;
+  }
+  if (scene === 8.5) {
+  	drawScene8();
+    scene = 8;
+  }
+  if (scene === 9.5) {
+  	drawScene9();
+    scene = 9;
+  }
+  if (scene === 10.5) {
+  	drawScene10();
+    scene = 10;
+  }
+  if (scene === 11.5) {
+  	drawScene11();
+    scene = 11;
+  }
+  if (scene === 12.5) {
+  	drawScene12();
+    scene = 12;
+  }
   if (scene === 1) {
     drawScene1();
   }
@@ -712,24 +748,51 @@ function drawAll() {
   if (scene === 3) {
     drawScene3();
   }
+  if (scene === 4) {
+  	drawScene4();
+  }
+  if (scene === 5) {
+  	drawScene5();
+  }
+  if (scene === 6) {
+  	drawScene6();
+  }
+  if (scene === 7) {
+  	drawScene7();
+  }
+  if (scene === 8) {
+  	drawScene8();
+  }
+  if (scene === 9) {
+  	drawScene9();
+  }
+  if (scene === 10) {
+  	drawScene10();
+  }
+  if (scene === 11) {
+  	drawScene11();
+  }
+  if (scene === 12) {
+  	drawScene12();
+  }
   if (scene === 192) {
     drawRebuild();
   }
 }
 
 function drawStuff() {
-  var cashE = cash.toExponential(1);
-  var multiplierE = multiplier.toExponential(1);
-  var hydrogenE = hydrogen.toExponential(1);
-  var heliumE = helium.toExponential(1);
-  var lithiumE = lithium.toExponential(1);
-  var beryliumE = berylium.toExponential(1);
-  var boronE = boron.toExponential(1);
-  var carbonE = carbon.toExponential(1);
-  var nitrogenE = nitrogen.toExponential(1);
-  var oxygenE = oxygen.toExponential(1);
-  var flourineE = flourine.toExponential(1);
-  var neonE = neon.toExponential(1);
+  var cashE = cash.toExponential(0);
+  var multiplierE = multiplier.toExponential(0);
+  var hydrogenE = hydrogen.toExponential(0);
+  var heliumE = helium.toExponential(0);
+  var lithiumE = lithium.toExponential(0);
+  var beryliumE = berylium.toExponential(0);
+  var boronE = boron.toExponential(0);
+  var carbonE = carbon.toExponential(0);
+  var nitrogenE = nitrogen.toExponential(0);
+  var oxygenE = oxygen.toExponential(0);
+  var flourineE = flourine.toExponential(0);
+  var neonE = neon.toExponential(0);
   context.fillStyle = 'black';
   context.font = '20px Arial';
   context.fillText("cash:", 0, 20, 100, 100);
@@ -900,38 +963,295 @@ function drawScene3() {
   context.fillText("cost:2.5e+7 multiplier", 350, 370, 250, 50);
 }
 
+function drawScene4() {
+  context.fillStyle = '#00ff00';
+  context.fillRect(150, 30, 150, 50);
+  context.fillRect(150, 90, 150, 50);
+  context.fillRect(150, 150, 150, 50);
+  context.fillRect(150, 210, 150, 50);
+  context.fillRect(150, 270, 150, 50);
+  context.fillRect(150, 330, 150, 50);
+  context.fillRect(350, 30, 150, 50);
+  context.fillRect(350, 90, 150, 50);
+  context.fillRect(350, 150, 150, 50);
+  context.fillRect(350, 210, 150, 50);
+  context.fillRect(350, 270, 150, 50);
+  context.fillRect(350, 330, 150, 50);
+  context.fillStyle = 'black';
+  context.font = '20px Arial';
+  context.fillText("1e+0 helium", 160, 50, 250, 50);
+  context.fillText("3e+0 helium", 160, 110, 250, 50);
+  context.fillText("7e+0 helium", 160, 170, 250, 50);
+  context.fillText("2e+1 helium", 160, 230, 250, 50);
+  context.fillText("4.5e+1 helium", 150, 290, 250, 50);
+  context.fillText("1e+2 helium", 160, 350, 250, 50);
+  context.fillText("cost:1e+2 hydrogen", 160, 70, 250, 50);
+  context.fillText("cost:5e+2 hydrogen", 160, 130, 250, 50);
+  context.fillText("cost:1e+3 hydrogen", 160, 190, 250, 50);
+  context.fillText("cost:2.5e+3 hydrogen", 150, 250, 250, 50);
+  context.fillText("cost:1e+4 hydrogen", 160, 310, 250, 50);
+  context.fillText("cost:2.5e+4 hydrogen", 150, 370, 250, 50);
+  context.fillText("2.5e+2 helium", 350, 50, 250, 50);
+  context.fillText("4.5e+2 helium", 350, 110, 250, 50);
+  context.fillText("1e+3 helium", 360, 170, 250, 50);
+  context.fillText("2.5e+3 helium", 350, 230, 250, 50);
+  context.fillText("4.5e+3 helium", 350, 290, 250, 50);
+  context.fillText("1e+4 helium", 355, 350, 250, 50);
+  context.fillText("cost:1e+5 hydrogen", 355, 70, 250, 50);
+  context.fillText("cost:5e+5 hydrogen", 355, 130, 250, 50);
+  context.fillText("cost:1e+6 hydrogen", 355, 190, 250, 50);
+  context.fillText("cost:2.5e+6 hydrogen", 350, 250, 250, 50);
+  context.fillText("cost:1e+7 hydrogen", 355, 310, 250, 50);
+  context.fillText("cost:2.5e+7 hydrogen", 350, 370, 250, 50);
+}
+
+function drawScene5() {
+  context.fillStyle = '#FF00FF';
+  context.fillRect(150, 30, 150, 50);
+  context.fillRect(150, 90, 150, 50);
+  context.fillRect(150, 150, 150, 50);
+  context.fillRect(150, 210, 150, 50);
+  context.fillRect(150, 270, 150, 50);
+  context.fillRect(150, 330, 150, 50);
+  context.fillRect(350, 30, 150, 50);
+  context.fillRect(350, 90, 150, 50);
+  context.fillRect(350, 150, 150, 50);
+  context.fillRect(350, 210, 150, 50);
+  context.fillRect(350, 270, 150, 50);
+  context.fillRect(350, 330, 150, 50);
+  context.fillStyle = 'black';
+  context.font = '20px Arial';
+  context.fillText("1e+0 lithium", 160, 50, 250, 50);
+  context.fillText("3e+0 lithium", 160, 110, 250, 50);
+  context.fillText("7e+0 lithium", 160, 170, 250, 50);
+  context.fillText("2e+1 lithium", 160, 230, 250, 50);
+  context.fillText("4.5e+1 lithium", 150, 290, 250, 50);
+  context.fillText("1e+2 lithium", 160, 350, 250, 50);
+  context.fillText("cost:1e+2 helium", 160, 70, 250, 50);
+  context.fillText("cost:5e+2 helium", 160, 130, 250, 50);
+  context.fillText("cost:1e+3 helium", 160, 190, 250, 50);
+  context.fillText("cost:2.5e+3 helium", 150, 250, 250, 50);
+  context.fillText("cost:1e+4 helium", 160, 310, 250, 50);
+  context.fillText("cost:2.5e+4 helium", 150, 370, 250, 50);
+  context.fillText("2.5e+2 lithium", 350, 50, 250, 50);
+  context.fillText("4.5e+2 lithium", 350, 110, 250, 50);
+  context.fillText("1e+3 lithium", 360, 170, 250, 50);
+  context.fillText("2.5e+3 lithium", 350, 230, 250, 50);
+  context.fillText("4.5e+3 lithium", 350, 290, 250, 50);
+  context.fillText("1e+4 lithium", 355, 350, 250, 50);
+  context.fillText("cost:1e+5 helium", 355, 70, 250, 50);
+  context.fillText("cost:5e+5 helium", 355, 130, 250, 50);
+  context.fillText("cost:1e+6 helium", 355, 190, 250, 50);
+  context.fillText("cost:2.5e+6 helium", 350, 250, 250, 50);
+  context.fillText("cost:1e+7 helium", 355, 310, 250, 50);
+  context.fillText("cost:2.5e+7 helium", 350, 370, 250, 50);
+}
+
+function drawScene6() {
+  context.fillStyle = '#FFFF00';
+  context.fillRect(150, 30, 150, 50);
+  context.fillRect(150, 90, 150, 50);
+  context.fillRect(150, 150, 150, 50);
+  context.fillRect(150, 210, 150, 50);
+  context.fillRect(150, 270, 150, 50);
+  context.fillRect(150, 330, 150, 50);
+  context.fillRect(350, 30, 150, 50);
+  context.fillRect(350, 90, 150, 50);
+  context.fillRect(350, 150, 150, 50);
+  context.fillRect(350, 210, 150, 50);
+  context.fillRect(350, 270, 150, 50);
+  context.fillRect(350, 330, 150, 50);
+  context.fillStyle = 'black';
+  context.font = '20px Arial';
+  context.fillText("1e+0 berylium", 160, 50, 250, 50);
+  context.fillText("3e+0 berylium", 160, 110, 250, 50);
+  context.fillText("7e+0 berylium", 160, 170, 250, 50);
+  context.fillText("2e+1 berylium", 160, 230, 250, 50);
+  context.fillText("4.5e+1 berylium", 150, 290, 250, 50);
+  context.fillText("1e+2 berylium", 160, 350, 250, 50);
+  context.fillText("cost:1e+2 lithium", 160, 70, 250, 50);
+  context.fillText("cost:5e+2 lithium", 160, 130, 250, 50);
+  context.fillText("cost:1e+3 lithium", 160, 190, 250, 50);
+  context.fillText("cost:2.5e+3 lithium", 150, 250, 250, 50);
+  context.fillText("cost:1e+4 lithium", 160, 310, 250, 50);
+  context.fillText("cost:2.5e+4 lithium", 150, 370, 250, 50);
+  context.fillText("2.5e+2 berylium", 350, 50, 250, 50);
+  context.fillText("4.5e+2 berylium", 350, 110, 250, 50);
+  context.fillText("1e+3 berylium", 360, 170, 250, 50);
+  context.fillText("2.5e+3 berylium", 350, 230, 250, 50);
+  context.fillText("4.5e+3 berylium", 350, 290, 250, 50);
+  context.fillText("1e+4 berylium", 355, 350, 250, 50);
+  context.fillText("cost:1e+5 lithium", 355, 70, 250, 50);
+  context.fillText("cost:5e+5 lithium", 355, 130, 250, 50);
+  context.fillText("cost:1e+6 lithium", 355, 190, 250, 50);
+  context.fillText("cost:2.5e+6 lithium", 350, 250, 250, 50);
+  context.fillText("cost:1e+7 lithium", 355, 310, 250, 50);
+  context.fillText("cost:2.5e+7 lithium", 350, 370, 250, 50);
+}
+
+function drawScene7() {
+	context.fillStyle = '#00FFFF';
+  context.fillRect(150, 30, 150, 50);
+  context.fillRect(150, 90, 150, 50);
+  context.fillRect(150, 150, 150, 50);
+  context.fillRect(150, 210, 150, 50);
+  context.fillRect(150, 270, 150, 50);
+  context.fillRect(150, 330, 150, 50);
+  context.fillRect(350, 30, 150, 50);
+  context.fillRect(350, 90, 150, 50);
+  context.fillRect(350, 150, 150, 50);
+  context.fillRect(350, 210, 150, 50);
+  context.fillRect(350, 270, 150, 50);
+  context.fillRect(350, 330, 150, 50);
+  context.fillStyle = 'black';
+  context.font = '20px Arial';
+  context.fillText("1e+0 boron", 160, 50, 250, 50);
+  context.fillText("3e+0 boron", 160, 110, 250, 50);
+  context.fillText("7e+0 boron", 160, 170, 250, 50);
+  context.fillText("2e+1 boron", 160, 230, 250, 50);
+  context.fillText("4.5e+1 boron", 150, 290, 250, 50);
+  context.fillText("1e+2 boron", 160, 350, 250, 50);
+  context.fillText("cost:1e+2 berylium", 160, 70, 250, 50);
+  context.fillText("cost:5e+2 berylium", 160, 130, 250, 50);
+  context.fillText("cost:1e+3 berylium", 160, 190, 250, 50);
+  context.fillText("cost:2.5e+3 berylium", 150, 250, 250, 50);
+  context.fillText("cost:1e+4 berylium", 160, 310, 250, 50);
+  context.fillText("cost:2.5e+4 berylium", 150, 370, 250, 50);
+  context.fillText("2.5e+2 boron", 350, 50, 250, 50);
+  context.fillText("4.5e+2 boron", 350, 110, 250, 50);
+  context.fillText("1e+3 boron", 360, 170, 250, 50);
+  context.fillText("2.5e+3 boron", 350, 230, 250, 50);
+  context.fillText("4.5e+3 boron", 350, 290, 250, 50);
+  context.fillText("1e+4 boron", 355, 350, 250, 50);
+  context.fillText("cost:1e+5 berylium", 355, 70, 250, 50);
+  context.fillText("cost:5e+5 berylium", 355, 130, 250, 50);
+  context.fillText("cost:1e+6 berylium", 355, 190, 250, 50);
+  context.fillText("cost:2.5e+6 berylium", 350, 250, 250, 50);
+  context.fillText("cost:1e+7 berylium", 355, 310, 250, 50);
+  context.fillText("cost:2.5e+7 berylium", 350, 370, 250, 50);
+}
+
+function drawScene8() {
+	context.fillStyle = '#B700FF';
+  context.fillRect(150, 30, 150, 50);
+  context.fillRect(150, 90, 150, 50);
+  context.fillRect(150, 150, 150, 50);
+  context.fillRect(150, 210, 150, 50);
+  context.fillRect(150, 270, 150, 50);
+  context.fillRect(150, 330, 150, 50);
+  context.fillRect(350, 30, 150, 50);
+  context.fillRect(350, 90, 150, 50);
+  context.fillRect(350, 150, 150, 50);
+  context.fillRect(350, 210, 150, 50);
+  context.fillRect(350, 270, 150, 50);
+  context.fillRect(350, 330, 150, 50);
+  context.fillStyle = 'black';
+  context.font = '20px Arial';
+  context.fillText("1e+0 carbon", 160, 50, 250, 50);
+  context.fillText("3e+0 carbon", 160, 110, 250, 50);
+  context.fillText("7e+0 carbon", 160, 170, 250, 50);
+  context.fillText("2e+1 carbon", 160, 230, 250, 50);
+  context.fillText("4.5e+1 carbon", 150, 290, 250, 50);
+  context.fillText("1e+2 carbon", 160, 350, 250, 50);
+  context.fillText("cost:1e+2 boron", 160, 70, 250, 50);
+  context.fillText("cost:5e+2 boron", 160, 130, 250, 50);
+  context.fillText("cost:1e+3 boron", 160, 190, 250, 50);
+  context.fillText("cost:2.5e+3 boron", 150, 250, 250, 50);
+  context.fillText("cost:1e+4 boron", 160, 310, 250, 50);
+  context.fillText("cost:2.5e+4 boron", 150, 370, 250, 50);
+  context.fillText("2.5e+2 carbon", 350, 50, 250, 50);
+  context.fillText("4.5e+2 carbon", 350, 110, 250, 50);
+  context.fillText("1e+3 carbon", 360, 170, 250, 50);
+  context.fillText("2.5e+3 carbon", 350, 230, 250, 50);
+  context.fillText("4.5e+3 carbon", 350, 290, 250, 50);
+  context.fillText("1e+4 carbon", 355, 350, 250, 50);
+  context.fillText("cost:1e+5 boron", 355, 70, 250, 50);
+  context.fillText("cost:5e+5 boron", 355, 130, 250, 50);
+  context.fillText("cost:1e+6 boron", 355, 190, 250, 50);
+  context.fillText("cost:2.5e+6 boron", 350, 250, 250, 50);
+  context.fillText("cost:1e+7 boron", 355, 310, 250, 50);
+  context.fillText("cost:2.5e+7 boron", 350, 370, 250, 50);
+}
+
+function drawRebuild(){
+    context.fillStyle = 'white';
+    context.fillRect(150,30,150,50);
+    context.fillRect(150,90,150,50);
+    context.fillRect(150,150,150,50);
+    context.fillRect(150,210,150,50);
+    context.fillRect(150,270,150,50);
+    context.fillRect(150,330,150,50);
+    context.fillRect(350,30,150,50);
+    context.fillRect(350,90,150,50);
+    context.fillRect(350,150,150,50);
+    context.fillRect(350,210,150,50);
+    context.strokeStyle = 'black';
+    context.strokeRect(150,30,150,50);
+    context.strokeRect(150,90,150,50);
+    context.strokeRect(150,150,150,50);
+    context.strokeRect(150,210,150,50);
+    context.strokeRect(150,270,150,50);
+    context.strokeRect(150,330,150,50);
+    context.strokeRect(350,30,150,50);
+    context.strokeRect(350,90,150,50);
+    context.strokeRect(350,150,150,50);
+    context.strokeRect(350,210,150,50);
+    context.fillStyle = 'black';
+    context.font = '20px Arial';
+    context.fillText("1e9 cash",175,55,150,50);
+    context.fillText("1e8 multiplier",175,115,150,50);
+    context.fillText("1e7 hydrogen",175,175,150,50);
+    context.fillText("1e6 helium",175,235,150,50);
+    context.fillText("1e5 lithium",175,295,150,50);
+    context.fillText("1e4 berylium",175,355,150,50);
+    context.fillText("rq:1e+2 helium",165,80,150,50);
+    context.fillText("rq:1e+2 lithium",165,140,150,50);
+    context.fillText("rq:1e+2 berylium",160,200,150,50);
+    context.fillText("rq:1e+2 boron",160,260,170,50);
+    context.fillText("rq:1e+2 carbon",155,320,150,50);
+    context.fillText("rq:1e+2 nitrogen",155,380,150,50);
+    context.fillText("1e3 boron",365,55,150,50);
+    context.fillText("1e2 carbon",365,115,150,50);
+    context.fillText("1e1 nitrogen",360,175,150,50);
+    context.fillText("1e0 oxygen",360,235,150,50);
+    context.fillText("rq:1e+2 oxygen",355,80,250,50);
+    context.fillText("rq:1e+2 flourine",355,140,250,50);
+    context.fillText("rq:1e+2 neon",355,200,250,50);
+    context.fillText("rq:1e+4 neon",355,260,250,50);
+}
+
 function checkMulti() {
-  if (cashMulti === 0) {
+  if (cashMulti < 1) {
     cashMulti = 1;
   }
-  if (multiMulti === 0) {
+  if (multiMulti < 1) {
     multiMulti = 1;
   }
-  if (hydrogenMulti === 0) {
+  if (hydrogenMulti < 1) {
     hydrogenMulti = 1;
   }
-  if (heliumMulti === 0) {
+  if (heliumMulti < 1) {
     heliumMulti = 1;
   }
-  if (lithiumMulti === 0) {
+  if (lithiumMulti < 1) {
     lithiumMulti = 1;
   }
-  if (beryliumMulti === 0) {
+  if (beryliumMulti < 1) {
     beryliumMulti = 1;
   }
-  if (boronMulti === 0) {
+  if (boronMulti < 1) {
     boronMulti = 1;
   }
-  if (carbonMulti === 0) {
+  if (carbonMulti < 1) {
     carbonMulti = 1;
   }
-  if (nitrogenMulti === 0) {
+  if (nitrogenMulti < 1) {
     nitrogenMulti = 1;
   }
-  if (oxygenMulti === 0) {
+  if (oxygenMulti < 1) {
     oxygenMulti = 1;
   }
-  if (flourineMulti === 0) {
+  if (flourineMulti < 1) {
     flourineMulti = 1;
   }
 }
