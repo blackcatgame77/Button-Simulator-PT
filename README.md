@@ -1,2 +1,2 @@
-# blackcatgame77.github.io
-Game website for all games made by BlackcatGame77
+# Button Simulator PT
+A basic button simulator originally written in Khan Academy, now written in vanilla Javascript
